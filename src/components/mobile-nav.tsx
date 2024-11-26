@@ -1,7 +1,7 @@
 'use client'
 
 import Link, { LinkProps } from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import * as React from 'react'
 
 import { Icons } from '@/components/icons'
@@ -13,6 +13,8 @@ import { ScrollArea } from './ui/scroll-area'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 
 export function MobileNav() {
+  const pathname = usePathname()
+
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -61,7 +63,16 @@ export function MobileNav() {
           onOpenChange={setOpen}
         >
           <Icons.logo className='mr-2 h-4 w-4' />
-          <span className='font-bold'>{siteConfig.name}</span>
+          <span
+            className={cn(
+              'transition-colors hover:text-foreground/80',
+              pathname === '/'
+                ? 'font-bold text-foreground'
+                : 'font-semibold text-foreground/60'
+            )}
+          >
+            {siteConfig.name}
+          </span>
         </MobileLink>
         <ScrollArea className='my-4 h-[calc(100vh-8rem)] pb-10 pl-6'>
           <div className='flex flex-col space-y-3'>
@@ -69,6 +80,12 @@ export function MobileNav() {
               item =>
                 item.href && (
                   <MobileLink
+                    className={cn(
+                      'transition-colors hover:text-foreground/80',
+                      pathname?.startsWith(item.href)
+                        ? 'font-semibold text-foreground'
+                        : 'text-foreground/60'
+                    )}
                     key={item.href}
                     href={item.href}
                     onOpenChange={setOpen}
