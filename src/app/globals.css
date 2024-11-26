@@ -92,3 +92,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* This won't be included in your compiled CSS unless you actually use it */
+  .content-container {
+    /* ... */
+    @apply pt-8 md:pt-10;
+  }
+}

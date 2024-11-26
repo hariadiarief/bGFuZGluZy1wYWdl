@@ -13,7 +13,7 @@ export default function Home() {
   console.log({ data })
 
   return (
-    <div className='container mt-16'>
+    <div className='container content-container'>
       <Button>Click me</Button>
     </div>
   )
