@@ -1,6 +1,7 @@
 import {
   AlertTriangle,
   ArrowRight,
+  CalendarDays,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -12,12 +13,16 @@ import {
   FileText,
   HelpCircle,
   Image,
+  Instagram,
   Laptop,
   Linkedin,
   Loader2,
+  type IconNode as LucideIcon,
   LucideProps,
+  Mail,
   Moon,
   MoreVertical,
+  MoveRight,
   Pizza,
   Plus,
   Settings,
@@ -25,12 +30,7 @@ import {
   Trash,
   Twitter,
   User,
-  X,
-  CalendarDays,
-  type IconNode as LucideIcon,
-  Mail,
-  Instagram,
-  MoveRight
+  X
 } from 'lucide-react'
 
 export type Icon = LucideIcon

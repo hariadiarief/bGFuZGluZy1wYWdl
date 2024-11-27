@@ -10,7 +10,7 @@ export default function SiteFooter() {
       <p className='text-balance text-center text-xs leading-loose text-muted-foreground md:text-left md:text-sm'>
         © 2024 Masagus Hariadi Arief.
       </p>
-      <div className=' lex self-center justify-self-center'>
+      <div className='lex self-center justify-self-center'>
         <Link href={siteConfig.links.github} target='_blank' rel='noreferrer'>
           <div
             className={cn(

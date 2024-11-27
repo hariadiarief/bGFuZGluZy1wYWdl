@@ -35,7 +35,7 @@ export function SideMenu({
                 key={index}
                 onClick={() => onClick(item.name)} // 'data' represents the name of the clicked item
                 className={cn(
-                  'flex w-full cursor-pointer items-center rounded-md p-2 hover:underline ',
+                  'flex w-full cursor-pointer items-center rounded-md p-2 hover:underline',
                   {
                     'bg-muted': item.name === activeItem
                   }

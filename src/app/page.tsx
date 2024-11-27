@@ -59,7 +59,7 @@ export default function Home() {
         <div className='mb-12 mt-[100px] text-2xl font-bold'>
           Popular Products
         </div>
-        <DynamicProductItems limit={6}/>
+        <DynamicProductItems limit={6} />
         <Link
           href='/products'
           className={cn('mt-8', buttonVariants({ variant: 'ghost' }))}
