@@ -74,7 +74,7 @@ export default function ProductItems({ limit = undefined }: ProductItems) {
                 alt='product image'
               />
               <h5 className='px1 mt-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white'>
-                {product.name}
+                {product.id} - {product.name}
               </h5>
             </Link>
           ))
