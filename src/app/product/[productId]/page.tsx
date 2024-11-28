@@ -69,7 +69,7 @@ export default function ProductDetail({ params }: IProductDetail) {
 
           <div className='mt-4 w-full md:mt-0'>
             <h3 className='mt-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white'>
-              {selectedProduct.name}
+              {selectedProduct.id} - {selectedProduct.name}
             </h3>
             <hr className='my-4 w-full' />
             <div>
