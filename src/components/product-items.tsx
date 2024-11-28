@@ -6,25 +6,25 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Skeleton } from './ui/skeleton'
 
-interface ProductItems {
+interface IPropsProductItems {
   limit?: number
 }
 
-interface IProduct {
+export interface IProduct {
   id: string
   name: string
 }
-interface IProductImage {
+export interface IProductImage {
   id: string[]
   image: string
 }
-interface IProductWithImage {
+export interface IProductWithImage {
   id: string
   name: string
   img: string
 }
 
-export default function ProductItems({ limit = undefined }: ProductItems) {
+export default function ProductItems({ limit = undefined }: IPropsProductItems) {
   const { data: products, isPending } = useQuery({
     queryKey: ['product'],
     queryFn: () =>
@@ -45,7 +45,7 @@ export default function ProductItems({ limit = undefined }: ProductItems) {
   return (
     <div
       className={
-        'xl:grid-cols- grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-8 lg:grid-cols-4'
+        'w-full xl:grid-cols-5 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-8 lg:grid-cols-4'
       }
     >
       {isPending ? (
