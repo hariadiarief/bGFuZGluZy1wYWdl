@@ -1,31 +1,8 @@
 import { Icons } from '@/components/icons'
+import ProductItems from '@/components/product-items'
 import { buttonVariants } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-
-const DynamicProductItems = dynamic(
-  () => import('@/components/product-items'),
-  {
-    loading: () => (
-      <div
-        className={
-          'grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-8 lg:grid-cols-4 xl:grid-cols-5'
-        }
-      >
-        {Array(6)
-          .fill(undefined)
-          .map((_, index: number) => (
-            <div key={index}>
-              <Skeleton className='mb-2 h-[100px] w-full' />
-              <Skeleton className='h-4 w-[50%]' />
-            </div>
-          ))}
-      </div>
-    )
-  }
-)
 
 export default function Home() {
   return (
@@ -59,9 +36,9 @@ export default function Home() {
         <div className='mb-12 mt-[100px] text-2xl font-bold'>
           Popular Products
         </div>
-        <DynamicProductItems limit={6} />
+        <ProductItems limit={5} />
         <Link
-          href='/products'
+          href='/product'
           className={cn('mt-8', buttonVariants({ variant: 'ghost' }))}
         >
           See all products
